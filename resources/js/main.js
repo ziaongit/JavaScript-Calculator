@@ -92,8 +92,12 @@ interfaceItems.forEach(function(item){
     if(item.value === '='){
         b.classList.add('equals');
         b.addEventListener('click', function(){
-            currentExpression =''+ eval(currentExpression);
-            updateDisplay();
+            if(currentExpression != ''){
+                currentExpression =''+ eval(currentExpression);
+                updateDisplay();
+            }else {
+                display.textContent = 0;
+            }
         });
     }else {
         if(typeof item.value === 'number') {
@@ -104,8 +108,10 @@ interfaceItems.forEach(function(item){
             b.classList.add('operation');
         }
         b.addEventListener('click', function(){
-            currentExpression += '' + item.value;
-            updateDisplay();
+            if(currentExpression.length>=9) 
+                return;
+                currentExpression += '' + item.value;
+                updateDisplay();
         });
     }
 
@@ -115,4 +121,9 @@ interfaceItems.forEach(function(item){
 function updateDisplay() {
     display.textContent = currentExpression.substring(0,9);
 }
+
+clearButton.addEventListener('click', function(){
+    currentExpression = '';
+    updateDisplay();
+});
 
