@@ -40,3 +40,40 @@ html, body {
 /* =========================
     GENERAL END
 ===========================*/
+
+/* =========================
+  CALCULATOR BUTTON STAR
+===========================*/
+#calculator {
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+.calculator-button {
+    width: 25%;
+    height: 20%;
+    background-color: #DDD;
+    border: 1px solid white;
+    outline: 0;
+    cursor: pointer;
+    font: inherit;
+}
+.calculator-display {
+    background-color: #F9F3F4;
+    width: 75%;
+    height: 20%;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+/* =========================
+  CALCULATOR BUTTON END
+===========================*/
